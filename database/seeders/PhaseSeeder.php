@@ -14,13 +14,14 @@ class PhaseSeeder extends Seeder
     public function run(): void
     {
         Phase::factory()
-            ->count(5)
+            ->count(6)
             ->sequence(
                 ['name' => 'Backlog'],
                 ['name' => 'To Do'],
                 ['name' => 'Doing'],
                 ['name' => 'Done'],
-                ['name' => 'Archived'],)
-            ->create();
+                ['name' => 'Archived'],
+                ['name' => 'completion'],
+            )->create();
     }
 }

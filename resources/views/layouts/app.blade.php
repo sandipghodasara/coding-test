@@ -15,6 +15,14 @@
         {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         {{-- @vite(['resources/js/app.js']) --}}
+        <style>
+            body{
+                overflow: hidden;
+            }
+            ::-webkit-scrollbar {
+                display: none;
+            }
+        </style>
     </head>
     <body class="font-sans antialiased">
         <div class="flex flex-col min-h-screen max-h-screen bg-gray-100">
@@ -23,7 +31,7 @@
             <!-- Page Heading -->
             @if (isset($header))
                 <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-3 px-4 sm:px-6 lg:px-8">
+                    <div class="mx-auto py-3 px-4 sm:px-6 lg:px-8">
                         {{ $header }}
                     </div>
                 </header>

@@ -32,5 +32,8 @@ export default defineConfig({
         hmr: {
             host: 'localhost'
         },
+    },
+    optimizeDeps: {
+        exclude: ['js-big-decimal']
     }
 });

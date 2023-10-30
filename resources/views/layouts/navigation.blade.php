@@ -1,6 +1,6 @@
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
     <!-- Primary Navigation Menu -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
@@ -18,6 +18,9 @@
 
                     <x-nav-link :href="route('tasks.index')" :active="request()->routeIs('tasks.index')">
                         {{ __('Tasks') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('statistics.index')" :active="request()->routeIs('statistics.index')">
+                        {{ __('Statistics') }}
                     </x-nav-link>
                 </div>
             </div>

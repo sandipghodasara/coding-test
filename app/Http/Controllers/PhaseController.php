@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StorePhaseRequest;
 use App\Http\Requests\UpdatePhaseRequest;
 use App\Models\Phase;
+use Exception;
+use Illuminate\Http\JsonResponse;
 
 class PhaseController extends Controller
 {
@@ -61,6 +63,20 @@ class PhaseController extends Controller
      */
     public function destroy(Phase $phase)
     {
-        //
+        try {
+            $phase->delete();
+            return new JsonResponse([
+                "code" => 200,
+                "status" => "success",
+                "message" => "Phase delete successfully.!"
+            ]);
+        }catch (Exception $exception){
+            return new JsonResponse([
+                "code" => $exception->getCode(),
+                "status" => "fail",
+                "message" => $exception->getMessage(),
+            ], $exception->getCode());
+        }
+
     }
 }
